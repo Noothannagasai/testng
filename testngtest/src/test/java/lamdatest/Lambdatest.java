@@ -1,4 +1,3 @@
-//This is maven project
 
 package lamdatest; //<your package name>
 
