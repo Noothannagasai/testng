@@ -6,9 +6,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class Lambdatest {
@@ -70,5 +72,20 @@ public class Lambdatest {
 		driver.findElement(By.xpath("//button[contains(text(),'Get Checked value')]")).click();
 		String message = driver.findElement(By.xpath("//p[@id=\"message\"]")).getText();
 		Assert.assertEquals(text, message);
+	}
+
+	@Test
+	public void scenario2(){
+		driver.get("https://www.lambdatest.com/selenium-playground/input-form-demo");
+		driver.findElement(By.xpath("//p[normalize-space()='Progress Bar & Sliders']")).click();
+		driver.findElement(By.xpath("//a[normalize-space()='Drag & Drop Sliders']")).click();
+		WebElement from = driver.findElement(By.xpath("//input[@value='15']"));
+		Web
+
+	}
+
+	@AfterTest
+	public void teardown() {
+		driver.quit();
 	}
 }
